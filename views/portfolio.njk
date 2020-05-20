@@ -1,0 +1,59 @@
+{% extends "layout.njk"%}
+
+
+
+{%  block head %}  
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet"> <!--Trazendo icones-->
+<title> portfolio -rocketseat </title>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+        <div id="wrapper">
+            <h1>Aulas</h1>
+            <!---  h1 até o h6 são ideias para trabalhar com titulo-->
+        </div>
+        
+        
+        <section class="cards">
+            {% for item in items %}  <!--  pegando variavél items definida no servidor e usando um for   -->          
+                <div class="card" id="{{item.id}}" target="_blank">
+                  <div class="cardImage  {{ 'featured-wrapper'  if item.featured}} ">
+                        <img id="img1" src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="videoaula">
+                        {% if item.featured %}
+
+                              <div class="featured">
+                              featured
+                              
+                              
+                              </div>
+
+                            {% endif %}
+                    </div>
+
+                    <div class="cardCon">
+
+                      <p>{{item.title}}</p>
+                    </div>
+
+                    <div class="info">
+                      <p>{{item.duration}}</p>
+                      <div class="price">
+                        <P>{{item.price}}</P>
+                      </div>
+                    </div>
+                </div>
+              {% endfor %}
+        </section>
+
+
+        <script src="script.js"></script>
+
+      {% endblock %}

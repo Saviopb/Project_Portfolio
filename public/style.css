@@ -1,0 +1,210 @@
+@import "https://fonts.googleapis.com/css?family=Noto+Sans&display=swap";  /* importando conteúdos para o CSS */
+:root{
+    --cor:teal;  /* Para adicionar variáveis no CSS*/
+--rock:#7159c1;
+}
+
+*{
+
+    margin:0;  /*  elemento * representa todo o html ,nesse trecho está sendo zerado todo o tamnaho padrão que vem no boxmodel   */
+    border: 0;
+    padding:0;
+    
+}
+
+body{
+    background:#282a36 ; /* cor darcula */
+ color:white;   
+    font-family: 'Open Sans', sans-serif; /* aplicando fonte da internet no corpo da página toda */
+    margin-bottom:30px
+}
+
+header{
+    padding:34px;
+    border-bottom:1px solid #333;
+    background: rgba(0, 0, 0, 0.1); /*   rgba mexer com uma ideia de transparência   */
+}
+
+.link {  /*usando classe para reaproveitar CSS */
+    text-align:center;  /* text tem muitas propriedades o align cetraliza o testo  */
+}
+
+.link a {  /*  uma ideia de cascata ,aonde pode-se especificar o elemento tornando as caractéristicas dele mais relevante    */
+   color:white;
+   font-size:18px;
+   line-height:28px;  /* um espaçamento da linha */
+   margin:0  16px;
+   text-decoration:none; /* tirando o windeline de link */
+}
+
+.link a:hover{ /* hover e uma ideia de mouse por cima que quando o mouse estiver em cima mudar a cor para teal e transition de 300 milisegndo para isso acontecer */
+   color:var(--cor);
+   transition:300ms;
+}   
+
+#wrapper{
+    text-align:center;
+    padding: 32px;
+
+}
+
+#wrapper img {
+    border-radius: 50% ; /*   border radius adiciona os valores no sentido horário , com dois valores adicionar verticalmente  */
+border:5px solid var(--cor);
+margin-bottom:32px;
+height:300px;
+    
+}
+
+#wrapper h1 {
+    font-size:42px;
+    line-height:52px;
+    font-weight: bold;
+
+}
+
+#wrapper h2{
+    font-size: 24px;
+    line-height: 34px;
+    font-weight:normal;
+    margin-top:8px;
+    opacity:0.8;
+}
+
+ #wrapper p {
+    max-width: 500px; /* width é a largura ou limite*/
+    margin:32px auto;
+    font-size:24px;
+    line-height: 34px;
+}  
+
+#wrapper p a {
+    color: var(--cor);
+}
+
+#linksocial a {
+    border-bottom:1px solid var(--cor)
+}
+
+/*=====Cards======*/
+
+.cards{
+max-width:800px;
+margin:0 auto;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr; /*criando 3 colunas */
+gap:20px; /*criando um espaçamento entre as colunas do grid*/
+}
+
+.card{
+    background-color:#7159c1;
+    cursor:pointer;
+    display:grid;
+}
+
+#img1{
+    width: 100%;  /*refenciado do tamanho do .cards 800px */
+}
+
+.cardCon , .info {padding: 24px;}
+
+.info{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+}
+.price{
+    background-color: var(--rock);
+    filter:brightness(90%);
+    padding: 5px 20px;
+    text-align:center;
+    border-radius: 20px;
+}
+
+/*========MOLDAL==========*/
+
+.modal-over {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:50px;
+    opacity:0; /*deixar invisível */
+    visibility: hidden; /*econdendo tanto aparência como funções*/}
+
+.modal{
+    background-color:white;
+    width: 90%;  /* largura*/
+    height: 90%; /*altura*/
+    margin: 5vh auto; /* colocando funçao de adpitaçao de tamanhos*/
+    position:relative; /*deixando relativo para posisionar o icone*/
+}
+
+.modal .closeModal{  /*icone de close */
+    color: black;
+    position:absolute;/*posiçao absoluta com o pai*/
+    right: 8px;
+    top: 8px;
+    cursor:pointer; /*colocar funçao de clique*/
+}
+
+/* Modal activity*/
+
+.modal-over.active{
+    opacity:1; /*reativando a janela */
+    visibility:visible;
+
+}
+
+iframe{
+    height:90%;
+    width:100%;
+    position:absolute;
+    top:5%;
+
+
+}
+
+
+/* <====FEATURED=====> */
+
+.cardImage {
+position:relative ;
+
+}
+
+
+.featured-wrapper .featured{
+position:absolute ;
+background-color: #a42d2d;
+border-radius: 5px;
+top: -17px;
+padding: 3px 4px;
+
+
+
+}
+
+
+/* <====PAGE VIDEO====> */
+
+.videos {
+margin-bottom:30px;
+  max-width:800px;
+  margin:0 auto ;
+}
+
+
+.card_video {
+  position:relative ;
+  padding-top:62.5%;
+}
+
+
+.card_video iframe {
+  position: absolute ;
+  height:100%;
+  width:100%;
+  top:0%;
+}
+

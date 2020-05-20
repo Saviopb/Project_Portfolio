@@ -1,0 +1,33 @@
+<!-- quando abrir a rota about ir para o layout.html e levar um 
+bloco de código  -->
+{% extends "layout.njk" %}
+
+
+{% block head %} 
+<title>
+
+Sobre - {{about.name}}	
+</title>
+
+{% endblock  %}
+
+{% block content %}
+
+		<div id="wrapper">
+			<img src ="{{about.avatar_url}}">
+			<h1>{{about.name}}</h1>  <!---  h1 até o h6 são ideias para trabalhar com titulo-->
+			<h2>{{about.role}}</h2>
+			<p>{{about.description}} </p> <!-- <p> trabalha com uma ideia de paragrafos-->
+			<!-- target _blank  ,ao clicar no href abre outra aba no navegador ao invés se sobrepor a outra -->  
+		</div>
+
+
+		<div class="link" id="linksocial"> 
+		 <!-- criando uma class link para a div-->
+		 	{% for link in about.links %}
+			<a href="{{ link.url }}" target="_blank">{{ link.name }}</a> <!--  href e uma ideia de link , elementos a  -->   
+		    {% endfor %}
+		</div>
+
+			
+{% endblock %}	

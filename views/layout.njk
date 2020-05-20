@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+       
+        <link rel="stylesheet" href="/style.css">
+
+
+        <!-- padrão caso não haja mada no bloco -->
+        {% block head %}
+        <title> Savio </title> 
+        {% endblock %}
+
+	</head>
+	<body>
+
+		<header>  
+			<div class="link">  
+
+				<a href="/">Sobre </a> 
+				<a href="/portfolio">Aulas</a>
+
+			</div>
+        </header>
+<!-- nesse bloco fica a parte do codigo definifida em cada pagina pelo block content -->
+    {% block content %} 
+    
+    {% endblock %} 
+
+	</body>    
+</html>
